@@ -1,0 +1,168 @@
+/* ── 1024px: grids 2-col ── */
+@media (max-width: 1024px) {
+  .why-cards,
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
+  }
+
+  .hero-stats {
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .logo-navbar {
+    width: min(380px, 42vw);
+  }
+}
+
+/* ── 900px: navbar móvil + escenas 2/3/prices ── */
+@media (max-width: 900px) {
+  /* Navbar */
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-burger {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  .navbar-mobile {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0 8%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border-top: 1px solid transparent;
+    transition:
+      max-height 0.28s ease,
+      opacity 0.24s ease,
+      padding 0.24s ease;
+  }
+
+  .navbar-mobile.open {
+    max-height: min(84vh, 560px);
+    opacity: 1;
+    padding: 0.4rem 8% 1rem;
+    border-top-color: var(--line-soft);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .navbar-mobile .nav-link {
+    display: block;
+    padding: 0.45rem 0;
+    text-align: left;
+  }
+
+  .navbar-mobile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding-top: 0.35rem;
+    width: 100%;
+  }
+
+  .navbar-mobile .btn {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 0;
+  }
+
+  .navbar-mobile .theme-toggle-btn {
+    min-width: 0;
+  }
+
+  .navbar-mobile .navbar-swap-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Escenas 2 (why) y 3 (how) — una columna, scroll si hay overflow */
+  .why,
+  .how {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .why-cards,
+  .steps {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    width: 100%;
+  }
+
+  /* Escena prices — scroll vertical en tablet */
+  /* prices mantiene el 2x2 en tablet */
+}
+
+/* ── 860px: hero apilado ── */
+@media (max-width: 860px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .logo-navbar {
+    width: min(340px, 70vw);
+  }
+}
+
+/* ── 700px: padding reducido, ajustes generales ── */
+@media (max-width: 700px) {
+  .home section {
+    padding: 7.5rem 6% 4rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Escena 4 (features) */
+  .features {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .features-list {
+    text-align: center;
+  }
+
+  /* Escena 5 (cta) */
+  .cta {
+    margin: 0 6%;
+  }
+
+  /* Escena prices — wrap en 2 filas */
+  /* gap ya usa clamp, sin override necesario */
+}
+
+/* ── 600px: hero-banner oculto, prices 1 columna ── */
+@media (max-width: 600px) {
+  .hero-banner {
+    display: none;
+  }
+
+  .navbar-mobile .btn {
+    flex-basis: 100%;
+  }
+}

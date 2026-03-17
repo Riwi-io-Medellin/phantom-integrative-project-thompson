@@ -1,0 +1,163 @@
+export const RESOURCE_ORDER = ['skills', 'users', 'matches'];
+
+export const RESOURCE_CONFIG = {
+  skills: {
+    title: 'Habilidades registradas',
+    endpointEnv: 'VITE_ADMIN_SKILLS_ENDPOINT',
+    endpointFallbacks: ['/admin/skills', '/skills'],
+    idAliases: ['id', 'skill_id'],
+    collectionPaths: [
+      'skills',
+      'items',
+      'results',
+      'data.skills',
+      'data.items',
+      'data.results',
+    ],
+    fields: [
+      {
+        key: 'name',
+        label: 'Nombre',
+        type: 'text',
+        requiredOnCreate: true,
+        aliases: ['name', 'skill_name', 'title'],
+      },
+    ],
+    columns: [
+      { label: 'Nombre', aliases: ['name', 'skill_name', 'title'] },
+    ],
+  },
+  users: {
+    title: 'Usuarios registrados',
+    endpointEnv: 'VITE_ADMIN_USERS_ENDPOINT',
+    endpointFallbacks: ['/admin/users', '/users'],
+    idAliases: ['id', 'user_id'],
+    collectionPaths: [
+      'users',
+      'items',
+      'results',
+      'data.users',
+      'data.items',
+      'data.results',
+    ],
+    fields: [
+      {
+        key: 'first_name',
+        label: 'Nombre',
+        type: 'text',
+        requiredOnCreate: true,
+        aliases: ['first_name', 'name', 'nombre'],
+      },
+      {
+        key: 'last_name',
+        label: 'Apellido',
+        type: 'text',
+        requiredOnCreate: true,
+        aliases: ['last_name', 'surname', 'apellido'],
+      },
+      {
+        key: 'email',
+        label: 'Correo',
+        type: 'email',
+        requiredOnCreate: true,
+        aliases: ['email', 'mail'],
+      },
+      {
+        key: 'phone',
+        label: 'Telefono',
+        type: 'text',
+        requiredOnCreate: false,
+        aliases: ['phone', 'telefono', 'mobile'],
+      },
+      {
+        key: 'role',
+        label: 'Rol',
+        type: 'text',
+        requiredOnCreate: false,
+        aliases: ['role', 'user_role'],
+      },
+      {
+        key: 'password',
+        label: 'Password',
+        type: 'password',
+        requiredOnCreate: false,
+        aliases: ['password'],
+      },
+    ],
+    columns: [
+      { label: 'ID', aliases: ['id', 'user_id'] },
+      { label: 'Nombre', aliases: ['first_name', 'name', 'nombre'] },
+      { label: 'Apellido', aliases: ['last_name', 'surname', 'apellido'] },
+      { label: 'Correo', aliases: ['email', 'mail'] },
+      { label: 'Rol', aliases: ['role', 'user_role'] },
+    ],
+  },
+  matches: {
+    title: 'Matches registrados',
+    endpointEnv: 'VITE_ADMIN_MATCHES_ENDPOINT',
+    endpointFallbacks: ['/admin/matches', '/matches'],
+    idAliases: [
+      'match_id',
+      'id',
+      'matchId',
+      'id_match',
+      'interaction_id',
+      'swap_id',
+      'room_id',
+    ],
+    collectionPaths: [
+      'matches',
+      'items',
+      'results',
+      'data.matches',
+      'data.items',
+      'data.results',
+    ],
+    fields: [
+      {
+        key: 'user_from_id',
+        label: 'Usuario origen',
+        type: 'number',
+        requiredOnCreate: true,
+        aliases: ['user_from_id', 'user_1_id', 'from_user_id'],
+      },
+      {
+        key: 'user_to_id',
+        label: 'Usuario destino',
+        type: 'number',
+        requiredOnCreate: true,
+        aliases: ['user_to_id', 'user_2_id', 'to_user_id'],
+      },
+      {
+        key: 'status',
+        label: 'Estado',
+        type: 'text',
+        requiredOnCreate: false,
+        aliases: ['status', 'state', 'is_completed', 'completed'],
+      },
+      {
+        key: 'room_id',
+        label: 'Room ID',
+        type: 'number',
+        requiredOnCreate: false,
+        aliases: ['room_id', 'chat_room_id'],
+      },
+    ],
+    columns: [
+      {
+        label: 'Match ID',
+        aliases: ['match_id', 'id', 'matchId', 'id_match', 'interaction_id', 'swap_id'],
+      },
+      {
+        label: 'Usuario origen',
+        aliases: ['user_from_id', 'user_1_id', 'from_user_id', 'user1_id'],
+      },
+      {
+        label: 'Usuario destino',
+        aliases: ['user_to_id', 'user_2_id', 'to_user_id', 'user2_id'],
+      },
+      { label: 'Estado', aliases: ['status', 'state', 'is_completed', 'completed'] },
+      { label: 'Room ID', aliases: ['room_id', 'chat_room_id'] },
+    ],
+  },
+};

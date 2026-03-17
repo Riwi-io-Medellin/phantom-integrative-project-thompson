@@ -1,0 +1,97 @@
+/* Authentication Pages Shared Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
+}
+
+/* Only apply full height and centering when NOT on home page */
+body.auth-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  padding-top: 0;
+}
+
+body.auth-page::before,
+body.auth-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.65s ease;
+}
+
+body.auth-page::before {
+  background: linear-gradient(135deg, #2356c4, #ece4ff);
+  opacity: 1;
+}
+
+body.auth-page::after {
+  background: linear-gradient(135deg, #e3f4ff, #8276dd);
+  opacity: 0;
+}
+
+body.auth-page #scroll-space {
+  height: 0 !important;
+  display: none !important;
+}
+
+body.auth-page.register-mode::before {
+  opacity: 0;
+}
+
+body.auth-page.register-mode::after {
+  opacity: 1;
+}
+
+/* Default body for home page - reset */
+body {
+  background: transparent;
+  min-height: initial;
+}
+
+/* Auth wrapper container - center content */
+.auth-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Navbar styling for auth pages – match main site appearance */
+body.auth-page .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 300;
+  background: rgba(239, 245, 255, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+  transition:
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+/* make sure the inner container remains centered and not pushed right */
+body.auth-page .navbar-container {
+  margin: 0 auto;
+  padding: 0.95rem 8%;
+}
+
+body.auth-page.register-mode .navbar {
+  background: rgba(224, 244, 255, 0.94);
+}

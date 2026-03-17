@@ -1,0 +1,124 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 300;
+  background: rgba(243, 246, 255, 0.76);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+  transition:
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(243, 246, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(37, 62, 117, 0.16);
+}
+
+.navbar-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.95rem 8%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+}
+
+.navbar-logo {
+  width: 34px;
+  height: 34px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.15;
+  min-height: 2.1rem;
+  min-width: 90px;
+  text-align: center;
+  opacity: 0.78;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.navbar .btn {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.navbar .theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 112px;
+}
+
+.navbar .theme-toggle-btn ion-icon {
+  font-size: 1rem;
+}
+
+.navbar-burger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--line-soft);
+  background: var(--bg-soft);
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.navbar-burger span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-main);
+  display: block;
+}
+
+.navbar-mobile {
+  display: none;
+}
+
+.navbar-mobile-actions .theme-toggle-btn {
+  width: 100%;
+}

@@ -1,0 +1,544 @@
+/* Register Page Styles - Fully Responsive */
+.button-register {
+  width: clamp(130px, 40%, 170px);
+  height: 40px;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  margin-top: 0;
+  background: linear-gradient(135deg, #38bdf8, var(--primary-b));
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(56, 189, 248, 0.32);
+  transition: all 0.3s ease;
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+.button-register:hover {
+  opacity: 0.9;
+  box-shadow: 0 14px 28px rgba(56, 189, 248, 0.42);
+}
+
+.button-register:active {
+  transform: scale(0.95);
+}
+
+.button-register-secondary {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #2356c4;
+  box-shadow: none;
+}
+
+.button-register-secondary:hover {
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.16);
+}
+
+.register-step {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.register-step--active {
+  display: flex;
+}
+
+#form-sign-up > h2 {
+  margin-bottom: 0.15rem;
+  line-height: 1.1;
+}
+
+#form-sign-up .social-networks {
+  margin-bottom: 0.15rem;
+}
+
+#form-sign-up > span {
+  margin-bottom: 0.2rem;
+  text-align: center;
+  max-width: 380px;
+  color: #52607a;
+}
+
+#form-sign-up .container-input {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#register-step-account.register-step--active,
+#register-step-skills.register-step--active {
+  display: grid;
+  width: min(100%, 620px);
+  gap: 0.55rem 0.85rem;
+}
+
+.register-step-header {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0;
+  padding: 0.7rem 0.9rem;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.12),
+    rgba(167, 139, 250, 0.12)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.register-step-header p {
+  font-size: 0.86rem;
+  color: #52607a;
+  line-height: 1.45;
+}
+
+.register-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: 0.28rem 0.65rem;
+  margin-bottom: 0.35rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #0f4c81;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.register-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: min(100%, 620px);
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding-top: 0.45rem;
+  padding-bottom: calc(0.2rem + env(safe-area-inset-bottom));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.95) 38%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.register-fields-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 0.75rem;
+}
+
+.register-fields-grid .container-input {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 0;
+  border-radius: 14px;
+}
+
+.register-fields-grid .container-input:nth-child(3),
+.register-fields-grid .container-input:nth-child(4),
+.register-fields-grid .container-input:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+.register-skills-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skill-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.9rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8ff 100%);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.skill-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #26344d;
+}
+
+.skill-input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.container-input--skill {
+  width: 100%;
+  flex: 1;
+  margin-bottom: 0;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container-input--skill ion-icon {
+  color: #475467;
+  pointer-events: none;
+}
+
+.container-input--skill input {
+  color: #0f172a;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  font-size: 0.95rem;
+  caret-color: #0f172a;
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.container-input--skill:focus-within {
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.container-input--skill input::placeholder {
+  color: #667085;
+}
+
+.button-skill-add {
+  border: none;
+  border-radius: 14px;
+  padding: 0 0.95rem;
+  min-height: 40px;
+  width: 100%;
+  flex-shrink: 0;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.button-skill-add--teach {
+  background: linear-gradient(135deg, #a78bfa, #ec4899);
+}
+
+.button-skill-add:hover {
+  opacity: 0.92;
+}
+
+.button-skill-add:active {
+  transform: scale(0.97);
+}
+
+.skills-chip-list {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px dashed rgba(124, 145, 180, 0.55);
+  align-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background: #dff4ff;
+  color: #0b4f6c;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.skill-chip--teach {
+  background: #fde7f3;
+  color: #8a174d;
+  border-color: rgba(236, 72, 153, 0.26);
+}
+
+.skill-chip-remove {
+  border: none;
+  background: rgba(255, 255, 255, 0.75);
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.skill-empty-state {
+  font-size: 0.8rem;
+  color: #475467;
+}
+
+.register-step-note {
+  width: 100%;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  color: #667085;
+  text-align: center;
+}
+
+#form-sign-up .form-error {
+  margin-bottom: 0;
+  padding: 5px 10px;
+}
+
+#register-step-account .register-step-header,
+#register-step-account .register-fields-grid,
+#register-step-skills .register-step-header,
+#register-step-skills .register-skills-grid,
+#register-step-skills .register-step-note {
+  grid-column: 1 / -1;
+}
+
+/* Animation for sign-up form */
+.sign-up {
+  transform: translateX(-100%);
+}
+
+.container.toggle .sign-up {
+  transform: translateX(0);
+}
+
+/* Welcome container for toggle effect */
+.container-welcome {
+  position: absolute;
+  height: 100%;
+  width: clamp(40%, 50%, 50%);
+  z-index: 3;
+  background: linear-gradient(145deg, #cdefff, #c7b9ff);
+  display: flex;
+  align-items: center;
+  transform: translateX(100%);
+  transition:
+    transform 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out;
+  overflow: hidden;
+  border-radius: 50% 0 0 50%;
+}
+
+.container.toggle .container-welcome {
+  transform: translateX(0);
+  border-radius: 0 50% 50% 0;
+  background: linear-gradient(145deg, #b8ddff, #7e6ddf);
+}
+
+.container-welcome .welcome {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(2rem, 4vw, 3.2rem) clamp(2rem, 4vw, 3.2rem);
+  color: white;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.welcome-sign-in {
+  transform: translateX(100%);
+}
+
+.container-welcome h3 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.container-welcome p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  max-width: 85%;
+}
+
+.button-signup,
+.button-star {
+  width: clamp(130px, 40%, 170px);
+  height: clamp(36px, 8vw, 45px);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  margin-top: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.button-signup {
+  background: linear-gradient(135deg, #38bdf8, var(--primary-b));
+  color: #0f2f4f;
+}
+
+.button-star {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  color: white;
+  box-shadow: 0 10px 22px rgba(167, 139, 250, 0.32);
+}
+
+.button-signup:hover,
+.button-star:hover {
+  opacity: 0.9;
+}
+
+.button-signup:hover {
+  box-shadow: 0 10px 22px rgba(56, 189, 248, 0.32);
+}
+
+.button-star:hover {
+  box-shadow: 0 14px 28px rgba(167, 139, 250, 0.42);
+}
+
+.button-signup:active,
+.button-star:active {
+  transform: scale(0.95);
+}
+
+.container.toggle .welcome-sign-in {
+  transform: translateX(0);
+}
+
+.container.toggle .welcome-sign-up {
+  transform: translateX(-100%);
+}
+
+/* ─────────────────────────────────────────────────
+   Responsive Register Styles
+   ───────────────────────────────────────────────── */
+
+/* Extra small devices (< 480px) */
+@media (max-width: 479px) {
+  .container {
+    min-height: 580px;
+  }
+
+  .button-register,
+  .button-signup,
+  .button-star {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .register-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .register-actions .button-register {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  #form-sign-up {
+    align-items: stretch;
+  }
+
+  #form-sign-up > h2,
+  #form-sign-up .social-networks,
+  #form-sign-up > span {
+    align-self: center;
+    text-align: center;
+  }
+
+  #register-step-account.register-step--active,
+  #register-step-skills.register-step--active,
+  .register-actions {
+    width: min(100%, 460px);
+    margin-inline: auto;
+  }
+
+  .register-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .register-fields-grid .container-input {
+    height: 42px;
+    min-height: 42px;
+  }
+
+  .register-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .skill-group {
+    padding: 0.75rem;
+  }
+
+  .skills-chip-list {
+    height: 74px;
+  }
+
+  .register-actions {
+    margin-top: 0.2rem;
+    padding-bottom: calc(0.35rem + env(safe-area-inset-bottom));
+  }
+
+  .register-actions .button-register {
+    flex: 1 1 170px;
+    min-height: 44px;
+    width: auto;
+    max-width: none;
+  }
+
+  .register-step-note {
+    font-size: 0.72rem;
+  }
+}
+
+/* Tablets/Laptops (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile override: avoid oversized sticky register buttons */
+@media (max-width: 479px) {
+  .register-actions .button-register {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 44px;
+    height: 44px;
+  }
+}
